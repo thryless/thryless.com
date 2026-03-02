@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thryless | Dashboard</title>
+    <style>
+        body { background-color: #0d1117; color: #58a6ff; font-family: sans-serif; text-align: center; padding: 50px; }
+        .card { border: 1px solid #30363d; padding: 20px; border-radius: 10px; display: inline-block; background: #161b22; }
+        h1 { color: #1f6feb; }
+        .timer { font-size: 2em; color: #39ff14; margin: 20px 0; font-family: monospace; }
+        .btn { background: #238636; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .btn:hover { background: #2ea043; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Bienvenido al mundo de Thryless</h1>
+        <p>Ahorrando al 13% en Meru 🚀</p>
+        
+        <div id="countdown" class="timer">Cargando contador...</div>
+        <p>Para mis 15 años (11 de Abril)</p>
+
+        <br><br>
+        <a href="#" class="btn">Mi Meta Meru</a>
+    </div>
+
+    <script>
+        function updateTimer() {
+            const target = new Date('April 11, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerHTML = days + " DÍAS RESTANTES";
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
